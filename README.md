@@ -1,7 +1,7 @@
 ![image](images/microchip.png) 
 
-# dsPIC33C High-Resolution PWM Configuration I
-**Complementary PWM Waveform Generation**
+# dsPIC33C High-Resolution PWM Configuration II
+**Independent PWM Waveform Generation**
 
 <p><center><a target="_blank" href="https://www.microchip.com/MA330048" rel="nofollow">
 <img src="images/ma330048.jpg" alt="dsPIC33CK Digital Power Plug-In Module" width="300"></a></center></p>
@@ -11,8 +11,8 @@
 ## Summary
 Learning how to use the High Resolution PWM Module of dsPIC33C MP devices 
 
-Lab 1: Complementary Waveform Generation
-Code example for dsPIC33CK and dsPIC33CH devices introducing the basic configuration of the high-resolution PWM module using one PWM generator channel generating a single, complementary PWM waveform
+Lab 2: Independent Waveform Generation
+Code example for dsPIC33CK and dsPIC33CH devices introducing the basic configuration of the high-resolution PWM module using one PWM generator channel generating two identical PWM waveforms
 
 - - -
 
@@ -30,7 +30,7 @@ Alternative Controller Plug-In Module:
 
 ## Software Used 
 - [MPLAB® X IDE v5.40](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB XC16 Compiler v1.50](https://www.microchip.com/mplabxc16windows)
+- [MPLAB XC16 Compiler v1.60](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v3.95](https://www.microchip.com/mplab/mplab-code-configurator)
 
 ## Hardware Used
@@ -52,7 +52,7 @@ Alternative Controller Plug-In Module:
 <br><center><img src="images/dm330029.jpg" width="400"></center>
 
 ## Operation
-After the device has been programmed and the MCU starts up, PWM generator #3 is generating a 200 kHz complementary waveform at the PWM3H/PWM3L outputs. 
+After the device has been programmed and the MCU starts up, PWM generator #3 is generating a two independent 200 kHz PWM waveforms at the PWM3H/PWM3L outputs. 
 
 <br><center><img src="images/pwm200kHz.png" width="400"></center><br>
 *200 kHz Switching Frequency Output*
