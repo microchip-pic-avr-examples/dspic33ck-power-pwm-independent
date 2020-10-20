@@ -30,7 +30,7 @@ Alternative Controller Plug-In Module:
 
 ## Software Used 
 - [MPLAB® X IDE v5.40](https://www.microchip.com/mplabx-ide-windows-installer)
-- [MPLAB XC16 Compiler v1.60](https://www.microchip.com/mplabxc16windows)
+- [MPLAB XC16 Compiler v1.50](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v3.95](https://www.microchip.com/mplab/mplab-code-configurator)
 
 ## Hardware Used
