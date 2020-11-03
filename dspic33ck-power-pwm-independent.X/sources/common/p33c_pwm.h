@@ -20,10 +20,29 @@
     TERMS.
 */
 
+/*@@p33c_pwm.h
+ * ************************************************************************************************
+ * Summary:
+ * Generic High-Speed SMPS PWM Driver Module & Generator Instances (header file)
+ *
+ * Description:
+ * This additional header file contains defines for all required bit-settings of all related 
+ * special function registers of a peripheral module and/or instance. 
+ * This file is an additional header file on top of the generic device header file.
+ * 
+ * See Also:
+ *	p33c_pwm.c
+ * 
+ * ***********************************************************************************************#
+ * Revision history: 
+ * 06/22/20     1.0     initial release
+ * 09/16/20     1.1     Simplified module and generator addressing
+ * ***********************************************************************************************/
+
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef P33C_PWM_MODULE_HEADER_H
-#define	P33C_PWM_MODULE_HEADER_H
+#ifndef P33C_PWM_SFR_ABSTRACTION_H
+#define	P33C_PWM_SFR_ABSTRACTION_H
 
 // Include standard header files
 #include <xc.h> // include processor files - each processor file is guarded.  
@@ -31,13 +50,9 @@
 #include <stdbool.h> // include standard boolean data types
 #include <stddef.h> // include standard definition data types
 
-#ifndef __dsPIC33C__
-   #error "peripherl driver p33c_pwm.h does not support the selected device"
-#endif
-
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
+//#ifndef __dsPIC33C__
+//   #error "peripheral driver p33c_pwm.h does not support the selected device"
+//#endif
 
     
 /* GENERIC SPECIAL FUNCTION REGISTER (SFR) SETS
@@ -384,8 +399,5 @@ extern volatile struct P33C_PWM_MODULE_SFRSET_s pwmConfigDefault;
 extern volatile struct P33C_PWM_GENERATOR_s pgConfigClear;
 
 
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
-
-#endif	/* P33C_PWM_MODULE_HEADER_H */
+#endif	/* P33C_PWM_SFR_ABSTRACTION_H */
+// END OF FILE
