@@ -4,14 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f2" displayName="common" projectFiles="true">
+        <itemPath>sources/common/p33c_pwm.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <itemPath>sources/config/dm330029_r20_pinmap.h</itemPath>
         <itemPath>sources/config/hal.h</itemPath>
         <itemPath>sources/config/ma330048_r30_pinmap.h</itemPath>
         <itemPath>sources/config/ma330049_r10_pinmap.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="drivers" projectFiles="true">
-        <itemPath>sources/drivers/p33c_pwm.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -38,10 +38,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
+      <logicalFolder name="f2" displayName="common" projectFiles="true">
+        <itemPath>sources/common/p33c_pwm.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="drivers" projectFiles="true">
-        <itemPath>sources/drivers/p33c_pwm.c</itemPath>
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
