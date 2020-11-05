@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/reset.c mcc_generated_files/tmr1.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c sources/pwm.c sources/common/p33c_pwm.c
+SOURCEFILES_QUOTED_IF_SPACED=sources/common/p33c_pwm.c mcc_generated_files/reset.c mcc_generated_files/tmr1.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c sources/pwm.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/sources/pwm.o ${OBJECTDIR}/sources/common/p33c_pwm.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/sources/pwm.o.d ${OBJECTDIR}/sources/common/p33c_pwm.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/sources/common/p33c_pwm.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/sources/pwm.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/sources/common/p33c_pwm.o.d ${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/sources/pwm.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/sources/pwm.o ${OBJECTDIR}/sources/common/p33c_pwm.o
+OBJECTFILES=${OBJECTDIR}/sources/common/p33c_pwm.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/sources/pwm.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/reset.c mcc_generated_files/tmr1.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c sources/pwm.c sources/common/p33c_pwm.c
+SOURCEFILES=sources/common/p33c_pwm.c mcc_generated_files/reset.c mcc_generated_files/tmr1.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/traps.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c sources/pwm.c
 
 
 
@@ -95,6 +95,13 @@ MP_LINKER_FILE_OPTION=,--script=p33CK256MP506.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/sources/common/p33c_pwm.o: sources/common/p33c_pwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/sources/common" 
+	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o.d 
+	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/common/p33c_pwm.c  -o ${OBJECTDIR}/sources/common/p33c_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/common/p33c_pwm.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	@${FIXDEPS} "${OBJECTDIR}/sources/common/p33c_pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 ${OBJECTDIR}/mcc_generated_files/reset.o: mcc_generated_files/reset.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/reset.o.d 
@@ -165,14 +172,14 @@ ${OBJECTDIR}/sources/pwm.o: sources/pwm.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/pwm.c  -o ${OBJECTDIR}/sources/pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/pwm.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	@${FIXDEPS} "${OBJECTDIR}/sources/pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+else
 ${OBJECTDIR}/sources/common/p33c_pwm.o: sources/common/p33c_pwm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/sources/common" 
 	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o.d 
 	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/common/p33c_pwm.c  -o ${OBJECTDIR}/sources/common/p33c_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/common/p33c_pwm.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/common/p33c_pwm.c  -o ${OBJECTDIR}/sources/common/p33c_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/common/p33c_pwm.o.d"      -mno-eds-warn  -g -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	@${FIXDEPS} "${OBJECTDIR}/sources/common/p33c_pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-else
 ${OBJECTDIR}/mcc_generated_files/reset.o: mcc_generated_files/reset.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/reset.o.d 
@@ -243,13 +250,6 @@ ${OBJECTDIR}/sources/pwm.o: sources/pwm.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/pwm.c  -o ${OBJECTDIR}/sources/pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/pwm.o.d"      -mno-eds-warn  -g -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	@${FIXDEPS} "${OBJECTDIR}/sources/pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/sources/common/p33c_pwm.o: sources/common/p33c_pwm.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/sources/common" 
-	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o.d 
-	@${RM} ${OBJECTDIR}/sources/common/p33c_pwm.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  sources/common/p33c_pwm.c  -o ${OBJECTDIR}/sources/common/p33c_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/sources/common/p33c_pwm.o.d"      -mno-eds-warn  -g -omf=elf -D__DM330029_R20__ -D__MA330048_dsPIC33CK_DPPIM__ -DXPRJ_MA330048_dsPIC33CK_DPPIM=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"sources" -I"mcc_generated_files" -O0 -I"C:/Program Files/Microchip/xc16/v1.50/support/dsPIC33C/h" -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	@${FIXDEPS} "${OBJECTDIR}/sources/common/p33c_pwm.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -291,3 +291,11 @@ endif
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r build/MA330048_dsPIC33CK_DPPIM
 	${RM} -r dist/MA330048_dsPIC33CK_DPPIM
+
+# Enable dependency checking
+.dep.inc: .depcheck-impl
+
+DEPFILES=$(shell mplabwildcard ${POSSIBLE_DEPFILES})
+ifneq (${DEPFILES},)
+include ${DEPFILES}
+endif
