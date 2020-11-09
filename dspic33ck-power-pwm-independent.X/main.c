@@ -200,15 +200,13 @@ int main(void)
             while(SW_Read() == SW_PRESSED); 
 
             // Update PWM timing registers
-            if(my_pg->PGxPER.value == 20000)   // IF period is set to 200 kHz)
+            if(my_pg->PGxTRIGA.value  == 5000)   // IF PWMxL duty is set to 25%)
             {
-                my_pg->PGxPER.value = 4000;    // set period to 1 MHz
-                my_pg->PGxDC.value = 1000;     // rescale to 25% duty cycle
+                my_pg->PGxTRIGA.value = 10000;    // set PWMxL duty to 50%
             }
-            else
+            else if(my_pg->PGxTRIGA.value  == 10000)
             {
-                my_pg->PGxPER.value = 20000;   // set period to 200 kHz
-                my_pg->PGxDC.value = 5000;     // rescale to 25% duty cycle
+                my_pg->PGxTRIGA.value = 5000;   // set PWMxL duty to 25%
             }
 
             // Set UPDATE bit of master PWM generator #1
