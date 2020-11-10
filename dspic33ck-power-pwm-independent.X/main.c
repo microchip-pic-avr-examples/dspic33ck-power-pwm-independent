@@ -200,13 +200,13 @@ int main(void)
             while(SW_Read() == SW_PRESSED); 
 
             // Update PWM timing registers
-            if(my_pg->PGxTRIGA.value  == 5000)   // IF PWMxL duty is set to 25%)
+            if(my_pg->PGxTRIGB.value  == 5000)   // IF PWMxL duty is set to 25%)
             {
-                my_pg->PGxTRIGA.value = 10000;    // set PWMxL duty to 50%
+                my_pg->PGxTRIGB.value = 10000;    // set PWMxL duty to 50%
             }
-            else if(my_pg->PGxTRIGA.value  == 10000)
+            else if(my_pg->PGxTRIGB.value  == 10000)
             {
-                my_pg->PGxTRIGA.value = 5000;   // set PWMxL duty to 25%
+                my_pg->PGxTRIGB.value = 5000;   // set PWMxL duty to 25%
             }
 
             // Set UPDATE bit of master PWM generator #1

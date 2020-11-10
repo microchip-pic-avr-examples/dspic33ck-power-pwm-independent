@@ -60,8 +60,7 @@ volatile uint16_t PWM_Initialize(void) {
     my_pg->PGxDC.value  = 5000;    // Set Duty CyclePWMxH(n = 5000 => n / PGxPER = 25.0 %)
     my_pg->PGxDTH.value = 400;     // Set Rising Edge Dead Time (n = 400 => n * 250 ps = 100 ns)
     my_pg->PGxDTL.value = 600;     // Set Falling Edge Dead Time (n = 600 => n * 250 ps = 150 ns)
-    my_pg->PGxTRIGA.value  = 5000;    // Set Duty Cycle PWMxL (n = 15000 => n / PGxPER = 25.0 %)
-    my_pg->PGxIOCONH.bits.POLL  = 1;  // Set PWMxL as active low
+    my_pg->PGxTRIGB.value  = 5000;    // Set Duty Cycle PWMxL (n = 15000 => n / PGxPER = 25.0 %)
 
     // Enable PWM generator with outputs DISABLED
     p33c_PwmGenerator_Enable(my_pg); 

@@ -50,14 +50,14 @@ Code example for dsPIC33CK and dsPIC33CH devices introducing the basic configura
 <br><center><img src="images/dm330029.jpg" width="400"></center>
 
 ## Operation
-After the device has been programmed and the MCU starts up, PWM generator #3 is generating a two independent 200 kHz PWM waveforms at the PWM3H/PWM3L outputs. 
+After the device has been programmed and the MCU starts up, PWM generator #3 is generating a two independent 200 kHz 25% duty PWM waveforms at the PWM3H/PWM3L outputs. 
 
-<br><center><img src="images/pwm200kHz.png" width="400"></center><br>
-*200 kHz Switching Frequency Output*
+<br><center><img src="images/PWMxL_Duty_25.png" width="400"></center><br>
+*200 kHz 25% Duty Switching Frequency Output*
 
-By pressing the on-board push button *USER* on the Digital Power Development Board, the switching frequency is toggled between the initial 200 kHz and 1 MHz.
-<br><center><img src="images/pwm1MHz.png" width="400"></center><br>
-*1 MHz Switching Frequency Output*
+By pressing the on-board push button *USER* on the Digital Power Development Board, the duty cycle of PWM3L is toggled between the initial 25% and 50%.
+<br><center><img src="images/PWMxL_Duty_50.png" width="400"></center><br>
+*200kHz 25% duty PWM3H and 50% duty PWM3L Switching Frequency Output*
 
 
 Please refer to section *FIRMWARE QUICK-START GUIDE* below for more information on the initialization process and code structure.
