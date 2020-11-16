@@ -39,7 +39,7 @@ volatile uint16_t PWM_Initialize(void) {
     
     // PGxCONL: PWM GENERATOR x CONTROL REGISTER LOW
     my_pg->PGxCONL.bits.CLKSEL = 0b01; // PWM Generator uses Master clock selected by the MCLKSEL[1:0] (PCLKCON[1:0]) control bits
-    my_pg->PGxCONL.bits.MODSEL = 0b000; // Independent Edge PWM mode
+    my_pg->PGxCONL.bits.MODSEL = 0b010; // Dual PWM mode
     my_pg->PGxCONL.bits.HREN = 1; // PWM Generator x operates in High-Resolution mode
     
     // PGxCONH: PWM GENERATOR x CONTROL REGISTER HIGH
@@ -57,9 +57,10 @@ volatile uint16_t PWM_Initialize(void) {
     // Set PWM signal generation timing of this generator 
     
     my_pg->PGxPER.value = 20000;   // Set Period (n = 20000 => 1 / (n * 250 ps) = 200 kHz )
-    my_pg->PGxDC.value  = 5000;    // Set Duty Cycle (n = 5000 => n / PGxPER = 25.0 %)
+    my_pg->PGxDC.value  = 5000;    // Set Duty CyclePWMxH(n = 5000 => n / PGxPER = 25.0 %)
     my_pg->PGxDTH.value = 400;     // Set Rising Edge Dead Time (n = 400 => n * 250 ps = 100 ns)
     my_pg->PGxDTL.value = 600;     // Set Falling Edge Dead Time (n = 600 => n * 250 ps = 150 ns)
+    my_pg->PGxTRIGB.value  = 5000;    // Set Duty Cycle PWMxL (n = 15000 => n / PGxPER = 25.0 %)
 
     // Enable PWM generator with outputs DISABLED
     p33c_PwmGenerator_Enable(my_pg); 
