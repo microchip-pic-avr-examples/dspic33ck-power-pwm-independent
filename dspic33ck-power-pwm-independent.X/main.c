@@ -50,18 +50,19 @@
 #include "main.h"
 
 /* ********************************************************************* *
- * PWM Complementary Output PWM Configuration Example
+ * PWM Independent Output PWM Configuration Example
  * 
  * Description:
  * 
    In this code example PWM generator channel #3 is initialized 
- *   to produce a complementary output signal at pins PWM3H and PWM3L.
+ *   to produce a independent output signal at pins PWM3H and PWM3L.
  *   Between rising and falling edges of the output signals a dead time 
  *   is added (100ns at rising edge of PWMxH and 150ns at falling edge of
- *   PWMxH). The initial frequency after startup is set to 200 kHz. By
- *   pressing push button [USER], the frequency is stepped to 1 MHz. By 
- *   pressing [USER] again, the frequency switches back to 200 khz,
- *   The duty ratio will always remain 25% of the switching period.
+ *   PWMxH). The initial frequency after startup is set to 200 kHz and 
+ *	 both PWMxH and PWMxL 25% duty ratio. By pressing push button [USER], 
+ *   the PWMxL duty ratio is stepped up to 50%. By pressing [USER] again, 
+ *   the duty ratio switches back to 25%,
+ *   
  * 
  * Please note:
  *   This code example can be run on dsPIC33CK as well as on dsPIC33CH
