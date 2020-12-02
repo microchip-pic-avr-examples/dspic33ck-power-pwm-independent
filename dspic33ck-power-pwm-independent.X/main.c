@@ -54,7 +54,7 @@
  * 
  * Description:
  * 
-   In this code example PWM generator channel #3 is initialized 
+ *   In this code example PWM generator channel #3 is initialized 
  *   to produce a independent output signal at pins PWM3H and PWM3L.
  *   Between rising and falling edges of the output signals a dead time 
  *   is added (100ns at rising edge of PWMxH and 150ns at falling edge of
